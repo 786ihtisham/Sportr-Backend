@@ -31,7 +31,7 @@ var app = express();
 if(process.env.NODE_ENV !== "test") {
 	app.use(logger("dev"));
 }
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3100;
 var http = require('http');
 app.set('port',port);
 var server = http.createServer(app);
