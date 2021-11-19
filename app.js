@@ -34,8 +34,8 @@ if(process.env.NODE_ENV !== "test") {
 }
 // for ssl certificate https
 var options = {
-    key: fs.readFileSync('./certs/server-key.pem'),
-    cert: fs.readFileSync('./certs/server-cert.pem'),
+    key: fs.readFileSync('server-key.pem'),
+    cert: fs.readFileSync('server-cert.pem'),
 };
 var port = process.env.PORT || 443;
 var https = require('https');
