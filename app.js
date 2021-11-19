@@ -7,6 +7,7 @@ var indexRouter = require("./routes/index");
 var apiRouter = require("./routes/api");
 var apiResponse = require("./helpers/apiResponse");
 var cors = require("cors");
+var fs = require("fs");
 
 // DB connection
 var MONGODB_URL = "mongodb://chrome-extension:kjBF2uhGa3p3s5H9@cluster0-shard-00-00.qrmff.mongodb.net:27017,cluster0-shard-00-01.qrmff.mongodb.net:27017,cluster0-shard-00-02.qrmff.mongodb.net:27017/test?replicaSet=atlas-137tiu-shard-0&ssl=true&authSource=admin";
