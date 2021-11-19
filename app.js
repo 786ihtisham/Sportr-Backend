@@ -37,7 +37,7 @@ var options = {
     key: fs.readFileSync('server-key.pem'),
     cert: fs.readFileSync('server-cert.pem'),
 };
-var port = process.env.PORT || 443;
+var port = process.env.PORT || 3100;
 var https = require('https');
 app.set('port',port);
 var server = https.createServer(options,app);
