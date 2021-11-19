@@ -31,15 +31,25 @@ var app = express();
 if(process.env.NODE_ENV !== "test") {
 	app.use(logger("dev"));
 }
-var port = process.env.PORT || 3100;
-var http = require('http');
+// for ssl certificate https
+var options = {
+    key: fs.readFileSync('./certs/server-key.pem'),
+    cert: fs.readFileSync('./certs/server-cert.pem'),
+};
+var port = process.env.PORT || 443;
+var https = require('https');
 app.set('port',port);
-var server = http.createServer(app);
-server.listen(port);
+var server = https.createServer(options,app);
+
+server.listen(port, () =>{
+	console.log("Express server listening on port " + port);
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
 
 //To allow cross-origin requests
 app.use(cors());
