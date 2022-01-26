@@ -33,14 +33,14 @@ if(process.env.NODE_ENV !== "test") {
 	app.use(logger("dev"));
 }
 // for ssl certificate https
-var options = {
-    key: fs.readFileSync('server-key.pem'),
-    cert: fs.readFileSync('server-cert.pem'),
-};
+// var options = {
+//     key: fs.readFileSync('server-key.pem'),
+//     cert: fs.readFileSync('server-cert.pem'),
+// };
 var port = process.env.PORT || 3100;
-var https = require('https');
+var http = require('http');
 app.set('port',port);
-var server = https.createServer(options,app);
+var server = http.createServer(app);
 
 server.listen(port, () =>{
 	console.log("Express server listening on port " + port);
