@@ -631,4 +631,67 @@ darkModeToggle.addEventListener('click', () => {
   }
 });
 
+;var btn = $('.backToTopButton');
+
+// Set a variable for our button element.
+const scrollToTopButton = document.getElementById('backToTopButton');
+
+// Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+const scrollFunc = () => {
+  // Get the current scroll value
+  let y = window.scrollY;
+  
+  // If the scroll value is greater than the window height, let's add a class to the scroll-to-top button to show it!
+  if (y > 0) {
+    scrollToTopButton.className = "backToTopButton show";
+  } else {
+    scrollToTopButton.className = "backToTopButton hide";
+  }
+};
+
+window.addEventListener("scroll", scrollFunc);
+
+const scrollToTop = () => {
+  // Let's set a variable for the number of pixels we are from the top of the document.
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  
+  // If that number is greater than 0, we'll scroll back to 0, or the top of the document.
+  // We'll also animate that scroll with requestAnimationFrame:
+  // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    // ScrollTo takes an x and a y coordinate.
+    // Increase the '10' value to get a smoother/slower scroll!
+    window.scrollTo(0, c - c / 10);
+  }
+};
+
+// When the button is clicked, run our ScrolltoTop function above!
+scrollToTopButton.onclick = function(e) {
+  e.preventDefault();
+  scrollToTop();
+}
+
+;// function initializeNotifications(target){
+//   debugger
+//     (function(i,s,o,g,r,a,m) {i['MagicBellObject'] = r;(i[r] =i[r] ||function() {
+//         (i[r].q = i[r].q || []).push(arguments);}),(i[r].l = 1 * new Date());(a = s.createElement(o)), (
+//         m = s.getElementsByTagName(o)[0]);a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
+//         })(window,document,'script','https://assets.magicbell.io/magicbell.min.js','magicbell');
+      
+//         var options = {
+//           apiKey: "531196c676655f19a8b4701ce71f3f4acae3b98e",
+//           userEmail: "matanbloom8@gmail.com", // @TODO Replace with the logged in user's email
+//           // You can use userExternalId instead of userEmail -  https://bit.ly/3oiDSAe
+//           onNotificationClick: function(notification) {
+//             if (notification.actionUrl) window.open(notification.actionUrl, '_self');
+//           },
+//           height: 500,
+//           theme: {"icon":{"borderColor":"#6113A3","width":"24px"},"unseenBadge":{"backgroundColor":"#DF4759"},"header":{"backgroundColor":"#6113A3","textColor":"#ffffff","borderRadius":"16px"},"footer":{"backgroundColor":"#6113A3","textColor":"#ffffff","borderRadius":"16px"},"notification":{"default":{"textColor":"#15091F","borderRadius":"8px","backgroundColor":"#6113A3"},"unseen":{"backgroundColor":"#6113A3"},"unread":{"backgroundColor":"#6113A3"}}},
+//         };
+      
+//        magicbell('render', target, options);
+      
+// }
+    
 ;

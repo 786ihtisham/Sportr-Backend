@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Data-source-code\matan-repository-main\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! D:\Software Development\Web development\Full-stack\MEAN\Sporter News App\Sportr-extension-main\src\polyfills.ts */"hN/g");
 
 
 /***/ }),

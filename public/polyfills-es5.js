@@ -466,7 +466,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
-      /*! D:\Data-source-code\matan-repository-main\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
+      /*! D:\Software Development\Web development\Full-stack\MEAN\Sporter News App\Sportr-extension-main\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
       "mRIq");
 
       __webpack_require__(
@@ -474,7 +474,7 @@
       "R0gw");
 
       module.exports = __webpack_require__(
-      /*! D:\Data-source-code\matan-repository-main\src\polyfills.ts */
+      /*! D:\Software Development\Web development\Full-stack\MEAN\Sporter News App\Sportr-extension-main\src\polyfills.ts */
       "hN/g");
       /***/
     },
