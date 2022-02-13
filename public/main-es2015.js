@@ -1245,7 +1245,7 @@ class ChromeTopSitesService {
     // baseUrl:string ="api";
     constructor(http) {
         this.http = http;
-        this.baseUrl = "https://ec2-3-144-144-117.us-east-2.compute.amazonaws.com:3100/api";
+        this.baseUrl = "http://cloudflaresportr.com/api";
     }
     addChromeTopSites(url, user_Id) {
         return this.http.post(this.baseUrl + "/auth/addChromeSites", { userId: user_Id, url: url });
@@ -1887,7 +1887,7 @@ class LoginService {
             picture: String,
             provider: String
         };
-        this.apiURL = 'https://ec2-3-144-144-117.us-east-2.compute.amazonaws.com:3100/api';
+        this.apiURL = 'http://cloudflaresportr.com/api';
     }
     registerUser(user) {
         this.loginUser.email = user.email;
@@ -3959,7 +3959,7 @@ __webpack_require__.r(__webpack_exports__);
 class ArticleService {
     constructor(http) {
         this.http = http;
-        this.baseUrl = "https://ec2-3-144-144-117.us-east-2.compute.amazonaws.com:3100/api";
+        this.baseUrl = "https://3.144.144.117/api";
         // baseUrl:string ="api";
         this.pageNo = 0;
     }

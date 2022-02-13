@@ -2472,7 +2472,7 @@
           _classCallCheck(this, ChromeTopSitesService);
 
           this.http = http;
-          this.baseUrl = "https://ec2-3-144-144-117.us-east-2.compute.amazonaws.com:3100/api";
+          this.baseUrl = "http://cloudflaresportr.com/api";
         }
 
         _createClass(ChromeTopSitesService, [{
@@ -3614,7 +3614,7 @@
             picture: String,
             provider: String
           };
-          this.apiURL = 'https://ec2-3-144-144-117.us-east-2.compute.amazonaws.com:3100/api';
+          this.apiURL = 'http://cloudflaresportr.com/api';
         }
 
         _createClass(LoginService, [{
@@ -7316,7 +7316,7 @@
           _classCallCheck(this, ArticleService);
 
           this.http = http;
-          this.baseUrl = "https://ec2-3-144-144-117.us-east-2.compute.amazonaws.com:3100/api"; // baseUrl:string ="api";
+          this.baseUrl = "https://3.144.144.117/api"; // baseUrl:string ="api";
 
           this.pageNo = 0;
         }
