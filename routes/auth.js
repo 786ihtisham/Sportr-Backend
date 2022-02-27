@@ -6,10 +6,11 @@ var router = express.Router();
 router.post("/register", AuthController.register);
 router.get("/:id",AuthController.getUser);
 router.post("/addChromeSites",AuthController.addChromeSites);
+router.post("/addNewSource",AuthController.addNewSource);
+router.get("/getAllNewSource/:id",AuthController.getNewSource);
 router.get("/getChromeSites/:id",AuthController.getChromeSites);
-router.get("/getNewSource",AuthController.getNewSource);
-
 router.delete("/deleteChromeSites/:id",AuthController.deleteChromeSites);
+router.delete("/deleteSource/:id",AuthController.deleteSource);
 router.put("/hideArticle/:id",AuthController.hideArticle);
 router.get("/upvoteArticle/:id/:userId",AuthController.upvoteArticle);
 router.get("/userunSelectedSources/:userId",AuthController.userunSelectedSources);
