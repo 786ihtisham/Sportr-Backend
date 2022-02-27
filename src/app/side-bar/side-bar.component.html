@@ -1,0 +1,264 @@
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar_content">
+    <div class="spaces-bar">
+      <div class="spaces-bar-content">
+        <div class="sidebar-top">
+          <div class="toolnew">
+            <li id="home" class="sidebar_link"flow="right" tooltip="Home">
+              <a data-tab="tab-1" href="#tab1" (click)="removeFavoriteArticle()">
+                <div class="sidebar_content_col">
+                  <div class="sidebar_content_col_inner sidebar_content_col_inner_1">
+                    <img class="logo" src="assets/images/logoill.png" alt=""/>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </div>
+         
+        </div>
+        <div class="sidebar-body">
+          <div class="toolnew">
+            <li id="SaveArticle" class="group_list_style linkhover">
+              <a data-tab="tab-1" href="#tab1" class="sidebar_link"flow="right"
+                 tooltip="Saved Items" (click)="addFavoriteArticle()">
+                <div class="sidebar_content_col">
+                  <div class="sidebar_content_col_inner sidebar_content_col_inner_1">
+                    <i class="material-icons">bookmark_border</i>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </div>
+          <div class="toolnew ">
+          <li class="position-relative group_list_style linkhover">
+            <a data-tab="tab" href="#tab15" class="sidebar_link"
+              flow="right" tooltip="Notifications">
+              <div class="sidebar_content_col">
+                <div class="sidebar_content_col_inner sidebar_content_col_inner_1">
+                  <i id="notificationsInbox" class="material-icons">notifications_none</i>
+                </div>
+              </div>
+            </a>
+          </li>
+          </div>
+
+          <div class="toolnew">
+            <li id="dark-mode-toggle" class="dark-mode-toggle group_list_style linkhover">
+              <a data-tab="#" href="#tab1" class="sidebar_link" onclick="myFunction();"
+                 flow="right" tooltip="Switch lighting Mode">
+                <div class="sidebar_content_col">
+                  <div class="sidebar_content_col_inner sidebar_content_col_inner_1">
+                    <i class="material-icons-outlined" (click)="darkmode()">brightness_2</i> <!-- wb_sunny -->
+                  </div>
+                </div>
+              </a>
+            </li>
+          </div>
+        </div>
+        <div class="sidebar-bottom">
+          <li class="position-relative group_list_style">
+            <a data-tab="tab" href="#tab13" class="sidebar_link"flow="right"
+               tooltip="Profile" onclick="Settingsopen()">
+              <div class="sidebar_content_col">
+                <div class="sidebar_content_col_inner sidebar_content_col_inner_1">
+                  <i href="#" class="btn-custom profile align">
+                    <img src="{{loginData.photoUrl}}"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="Notification_sidebar"  id="Notification">
+  <div class="Notification_content">
+    <div class="noti-title">
+      <h5>Notification
+        <span class="float-right">
+                      <a href="javascript: void(0);">
+                            <small>Clear All</small>
+                        </a>
+                    </span>
+      </h5>
+    </div>
+    <div class="scrolllist">
+      <!-- item-->
+      <div class="notify-item">
+        <div class="notify-icon bg-primary">
+          <i class="material-icons">perm_identity</i>
+        </div>
+        <div class="notify-details">
+          <p><small class="msg-time">1 min ago</small> If you like what we do, please tell your friends and share
+            the love for Sportr.</p>
+          <div class="cta" ng-if="notification.cta"
+               ng-click="logNotificationCta(notification, $event)">
+            <a href="" ng-click="::shareAfterLogin('twitter')" class="twitter">Twitter</a>
+            <a href="" class="facebook" ng-click="::shareAfterLogin('facebook')">Facebook</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- item-->
+      <div class="notify-item">
+        <div class="notify-icon">
+          <img src="assets/images/profilenoti.png" class="img-fluid rounded-circle" alt=""></div>
+        <div class="notify-details">
+          <small><b>Founder</b> Yam Sasson</small>
+          <p class="user-msg">Thank you for helping Sportr grow!</p>
+          <small class="msg-time">Nov 4</small>
+        </div>
+      </div>
+
+      <!-- item-->
+      <div class="d notify-item">
+        <div class="notify-icon bg-info">
+          <i class="material-icons">visibility</i>
+        </div>
+        <p class="notify-details">New user registered with your invitation! thank you.
+          <small class="msg-time">5 hours ago</small>
+        </p>
+      </div>
+
+      <!-- item-->
+      <div class=" notify-item">
+        <div class="notify-icon">
+          <img
+            src="https://yt3.ggpht.com/ytc/AAUvwngHSD7Xxh5h1yH1RAJfpTIHujIEYI3eyncOB5fwyA=s88-c-k-c0x00ffffff-no-rj"
+            class="img-fluid rounded-circle" alt=""></div>
+        <div class="notify-details"><small><b>Founder</b> Dan Bloom</small>
+          <p class="user-msg">Hi, I want to welcome you to Sportr. Please let us know what you think</p>
+        </div>
+      </div>
+
+    </div>
+    <a href="javascript:void(0);" class="text-center notify-item notify-all">
+      View All
+    </a>
+  </div>
+</div>
+
+<div class="settings_sidebar" id="Settings">
+    <div class="Settingsmenu_content">
+      <div class="menu-section-body">
+        <ul class="left-settings">
+        <h4 class="sidebartiltle">Layout</h4>
+        
+          <li class="position-relative group_list_style">
+            <div class="rowinfo checkboxrow">
+              <div class="icon">
+                <img src="assets/images/fullload.png" alt="" class="img-responsive"/>
+              </div>
+              <span>Full view on load</span>
+            </div>
+            <input type='checkbox' class="settingtoggle"/>
+          </li>
+          <li class="position-relative group_list_style">
+            <div class="rowinfo checkboxrow">
+              <div class="icon">
+                <img src="assets/images/mostvisited.png" alt="" class="img-responsive"/>
+              </div>
+              <span>Most visited websites</span>
+            </div>
+            <input type='checkbox' class="settingtoggle"/>
+          </li>
+       
+        <h4 class="sidebartiltle">Explore</h4>
+          <li class="position-relative group_list_style beamerTrigger" onclick="openNew()">
+            <a data-tab="ta" href="#b1" class="linkhover">
+              <div class="rowinfo">
+                <div class="align">
+                  <div class="icon">
+                    <img src="assets/images/Explore.png" class="img-responsive"/>
+                  </div>
+                  <span>What's new</span>
+                </div>
+                <img src="assets/images/arrow.png" class="arrowright"/>
+              </div>
+            </a>
+          </li>
+        
+        <h4 class="sidebartiltle">How you can halp</h4>
+          <li class="position-relative group_list_style">
+            <a data-tab="ta" href="https://www.paypal.com/donate?hosted_button_id=Y8G872GK7DYB4" class="linkhover" >
+              <div class="rowinfo">
+                <div class="align">
+                  <div class="icon">
+                    <img src="assets/images/Doante.png" class="img-responsive"/>
+                  </div>
+                  <span>Doante</span>
+                </div>
+                <img src="assets/images/arrow.png" class="arrowright"/>
+              </div>
+            </a>
+          </li>
+          <li class="position-relative group_list_style">
+            <a data-tab="ta" href="http://sportr.io/invite" class="linkhover" target="_blank">
+              <div class="rowinfo">
+                <div class="align">
+                  <div class="icon">
+                    <img src="assets/images/Plusinvite.png" class="img-responsive"/>
+                  </div>
+                  <span>Invite friends</span>
+                </div>
+                <img src="assets/images/arrow.png" alt="" class="arrowright"/>
+              </div>
+            </a>
+          </li>
+          <li class="position-relative group_list_style">
+            <a data-tab="ta" href="https://0kats7s6xj9.typeform.com/to/cZfAh19d" class="linkhover" target="_blank">
+              <div class="rowinfo">
+                <div class="align">
+                  <div class="icon">
+                    <img src="assets/images/feedback.png" class="img-responsive"/>
+                  </div>
+                  <span>Give us feedback</span>
+                </div>
+                <img src="assets/images/arrow.png" class="arrowright"/>
+              </div>
+            </a>
+          </li>
+          <li class="position-relative group_list_style" (click)="openSourceModal()">
+            <div data-tab="ta" onclick="subitweb()" class="linkhover">
+              <div class="rowinfo">
+                <div class="align">
+                  <div class="icon">
+                    <img src="assets/images/Suggest.png" class="img-responsive"/>
+                  </div>
+                  <span>Suggest a link</span>
+                </div>
+                <img src="assets/images/arrow.png" alt="" class="arrowright"/>
+              </div>
+            </div>
+          </li>
+       
+      </ul>
+<!---->
+<ul class="right-settings">	 
+  <div class="links">
+    <h4 class="sidebartiltle">Links</h4>
+     <li><a href="http://www.Sportr.io/about/bug">Report a bug</a></li>
+     <li><a href="https://www.Sportr.io/privacy">Privacy Policy</a></li>
+     <li><a href="https://www.Sportr.io/terms">Terms of Service</a></li>
+</div>
+      </ul>
+      </div>
+      <div class="menu-section-footer userinfo">
+        <div class="rowinfo">
+          <div class="align">
+            <img src="{{loginData.photoUrl}}" alt="" class="profilesettings"/>
+            <h5>{{loginData.name}} <br><span>via {{loginData.provider}}</span></h5>
+          </div>
+          <button class="logout hoverbutton" (click)="signOut()">Logout</button>
+        </div>
+      </div>
+</div>
+</div>
+
+

@@ -1,0 +1,16 @@
+{
+    "name": "Sportr",
+    "version": "0.1",
+    "description": "You can see any sports news, which includes from all over the World.",
+    "manifest_version": 1,
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "browser_action": {
+        "default_icon": "assets/images/logo.png"
+    },
+    "permissions": [
+        "tabs"
+    ]
+
+}

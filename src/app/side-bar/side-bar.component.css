@@ -1,0 +1,118 @@
+.profile-setting-close{
+  width: 17px;
+  float: right;
+  margin-top: -17px;
+  margin-right: 11px;
+}
+
+.settings_sidebar{
+  display: inline-block;
+}
+
+.iframe{
+  position: absolute;
+  top: 2%;
+  right: 0%;
+}
+.settings_sidebar {
+  position: fixed;
+  background-color: #fbfbfb;
+  overflow-y: auto;
+  box-shadow: none;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+  box-shadow: 0px 8px 14px 10px rgba(162, 162, 162, 0.25);
+  z-index: 99999;
+}
+
+.right-settings {
+  width: 240px;
+  background-color: #f7f7f7;
+  border-left: 1px solid #e9eaed;
+}
+
+.Settingsmenu_content {
+  width: 500px;
+  display: block;
+}
+
+.group_list_style {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.sidebar_content_col_inner.sidebar_content_col_inner_1 span,
+.sidebar_content_col_inner.sidebar_content_col_inner_2 {
+  visibility: hidden;
+  display: block;
+  transition: all .3s
+}
+
+/*.sidebar:hover .sidebar_content_col_inner.sidebar_content_col_inner_1 span,
+.sidebar:hover .sidebar_content_col_inner.sidebar_content_col_inner_2 {
+    display: block;
+    visibility: inherit
+}*/
+
+.moreSources .sidebartiltle, .fevoriteSources .sidebartiltle {
+  padding: 0px 0px 5px 10px;
+  margin: 0;
+}
+.sidebartiltle {
+  color: #9699a6;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 10px 0 10px 0;
+  font-family: Circular Std;
+}
+
+.sidebar_content {
+  display: grid;
+  grid: 1fr/auto auto;
+  position: relative;
+  height: 100vh;
+}
+
+.spaces-bar-content {
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 100%;
+  border-right: 1px solid #d6d6d6;
+  z-index: 700;
+  display: grid;
+  /*grid-template-rows: 1fr auto;*/
+  will-change: transform,width;
+  position: relative;
+  padding: 10px 0;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  /*overflow: hidden;*/
+  margin-top: 5px;
+}
+
+.sidebar-body {
+  display: flex;
+  flex-direction: column;
+  /*overflow: hidden;*/
+  margin-top: auto;
+  margin-bottom: auto;
+  align-items: center;
+}
+.sidebar-bottom {
+  margin-top: auto;
+  /* border-top: 2px solid #e9ebf0;*/
+  min-width: 0;
+  margin-bottom: 5px;
+}
+
+
+.magicbell-embeddable-l12v88 svg {
+  borderColor: #fff;
+}

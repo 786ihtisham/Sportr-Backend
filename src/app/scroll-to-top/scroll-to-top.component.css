@@ -1,0 +1,42 @@
+.backToTopButton {
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to top right, #427dd8 , #786af6);
+    position: fixed;
+    padding-top: 3px;
+    bottom: 0;
+    right: 8em;
+    width: 40px;
+    height: 30px;
+    -webkit-box-shadow: 0 5px 38px rgb(0 0 0 / 15%);
+    box-shadow: 0 5px 38px rgb(0 0 0 / 15%);
+    visibility: visible;
+    opacity: 1;
+    border-radius: 8px 8px 0px 0;
+    cursor: pointer;
+} 
+/*
+    -webkit-transition: visibility 0s linear 0.2s, opacity linear 0.2s;
+    -o-transition: visibility 0s linear 0.2s, opacity linear 0.2s;
+    transition: visibility 0s linear 0.2s, opacity linear 0.2s;
+   -webkit-transition-delay: 0s !important;
+    transition-delay: 0s !important;
+ transition: all 450ms ease-in-out;
+.backToTopButton[_ngcontent-wam-c48] {
+    outline: none;
+    border: none;
+    background-color: rgb(110, 121, 170);
+    position: fixed;
+    bottom: 0;
+    right: 8em;
+    width: 40px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    background: #6e79aa;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px 8px 0px 0;
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+    z-index: 0;
+}*/
