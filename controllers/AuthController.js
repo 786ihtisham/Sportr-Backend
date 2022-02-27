@@ -1,8 +1,6 @@
 const UserModel = require("../models/UserModel");
 const SourceModel = require("../models/SourceModel");
 const ArticleModel=require("../models/ArticleModel");
-const NewSource=require("../models/NewSource");
-
 const ChromeTopSitesModel = require("../models/TopChromeSites");
 const { body,validationResult } = require("express-validator");
 const { sanitizeBody } = require("express-validator");
@@ -98,37 +96,6 @@ exports.addChromeSites = [
 		}
 	}
 ];
-exports.addNewSource = [
-	// method for adding new source
-	body("url").isLength({ min: 1 }).trim().withMessage("url must be specified."),
-	body("userId").isLength({ min: 1 }).trim().withMessage("userId must be specified."),
-	(req, res) => {
-		try {
-			
-			const errors = validationResult(req);
-			if (!errors.isEmpty()) {
-				// Display sanitized values/errors messages.
-				return apiResponse.validationErrorWithData(res, "Validation Error.", errors.array());
-			}else {
-
-				var addNewSource = new NewSource(
-					{
-						url: req.body.url,
-						favicon: req.body.favicon,
-						userId: req.body.userId,
-					}
-				);
-				addNewSource.save(function (err) {
-					if (err) { return apiResponse.ErrorResponse(res, err); }
-					return apiResponse.successResponseWithData(res,"Sources saved Successfully.", addNewSource);
-				});
-			}
-		} catch (err) {
-			console.log(err)
-			return apiResponse.ErrorResponse(res, err);
-		}
-	}
-];
 exports.getUser=[
 	(req, res) => {
 		try {
@@ -149,20 +116,6 @@ exports.getChromeSites=[
 				return apiResponse.successResponseWithData(res,"chrome top sites", data);
 			});
 	} catch (err) {
-			return apiResponse.ErrorResponse(res, err);
-		}
-	}
-];
-exports.getNewSource=[
-	// method for getting all new sources 
-	(req, res) => {
-		try {
-			NewSource.find({userId:req.params.id}).then((data,err)=>{
-				if (data.length===0) { return apiResponse.ErrorResponse(res, err); }
-				return apiResponse.successResponseWithData(res,"New Source Data", data);
-			});
-	} catch (err) {
-		console.log(err);
 			return apiResponse.ErrorResponse(res, err);
 		}
 	}
@@ -422,31 +375,6 @@ exports.deleteChromeSites=[
 
 				if (data){
 					ChromeTopSitesModel.findByIdAndRemove(req.params.id,function (err) {
-						if (err) {
-							return apiResponse.ErrorResponse(res, err);
-						}else{
-							return apiResponse.successResponse(res,"delete successfully.");
-						}
-					});
-				}
-				else{
-					return apiResponse.successResponse(res, 'not found');s
-				}
-
-			});
-		} catch (err) {
-			return apiResponse.ErrorResponse(res, err);
-		}
-	}
-];
-
-exports.deleteSource=[
-	(req, res) => {
-		try {
-			NewSource.findOne({_id:req.params.id}).then((data)=>{
-
-				if (data){
-					NewSource.findByIdAndRemove(req.params.id,function (err) {
 						if (err) {
 							return apiResponse.ErrorResponse(res, err);
 						}else{

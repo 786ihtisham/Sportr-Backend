@@ -23,8 +23,7 @@ var ArticleSchema = new Schema({
     created_date:{type: String, required: false},
     published_date:{type: String, required: false},
   picks:{type: String, required: false},
-    visitor:{type:Number,required:false,default : 0},
-    totalArticleCount:{type:Number,required:false,default : 0}
+    visitor:{type:Number,required:false,default : 0}
 }, {timestamps: true});
 
 module.exports = mongoose.model("Article", ArticleSchema);

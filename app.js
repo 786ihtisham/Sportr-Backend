@@ -7,7 +7,11 @@ var indexRouter = require("./routes/index");
 var apiRouter = require("./routes/api");
 var apiResponse = require("./helpers/apiResponse");
 var cors = require("cors");
-var fs = require("fs");
+const openssl = require('openssl-nodejs')
+
+openssl('openssl req -config csr.cnf -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout key.key -out certificate.crt', (err,buffer) => {
+	console.log(err.toString(), buffer.toString());
+});
 
 // DB connection
 var MONGODB_URL = "mongodb://chrome-extension:kjBF2uhGa3p3s5H9@cluster0-shard-00-00.qrmff.mongodb.net:27017,cluster0-shard-00-01.qrmff.mongodb.net:27017,cluster0-shard-00-02.qrmff.mongodb.net:27017/test?replicaSet=atlas-137tiu-shard-0&ssl=true&authSource=admin";
@@ -32,25 +36,16 @@ var app = express();
 if(process.env.NODE_ENV !== "test") {
 	app.use(logger("dev"));
 }
-// for ssl certificate https
-// var options = {
-//     key: fs.readFileSync('server-key.pem'),
-//     cert: fs.readFileSync('server-cert.pem'),
-// };
 var port = process.env.PORT || 3100;
 var http = require('http');
 app.set('port',port);
 var server = http.createServer(app);
-
-server.listen(port, () =>{
-	console.log("Express server listening on port " + port);
-});
+server.listen(port);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
 
 //To allow cross-origin requests
 app.use(cors());
